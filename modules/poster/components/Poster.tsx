@@ -15,7 +15,7 @@ const Poster = ({ poster, className }: PosterProps) => {
 			className={`flex flex-col justify-between max-w-[600px] w-full p-5 rounded-xl shadow-md hover:shadow-xl transition-shadow ${className} mx-auto mt-5`}
 		>
 			<div>
-				<PosterImage imageURL={poster.imageURL} />
+				<PosterImage imageURL={poster.imageURL} pdfURL={poster.pdfURL} />
 				<div className='flex justify-between items-center'>
 					<PosterTitle title={poster.title} />
 					<div className='flex flex-col justify-start items-end pt-3'>

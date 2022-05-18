@@ -8,16 +8,18 @@ class Poster {
   authors: string[];
   title: string;
   abstract: string;
-  imageURL: string;
+  imageURL?: string;
+  pdfURL?: string;
   videoURL: string;
   course: Course;
 
-  constructor(id: number, authors: string[], title: string, abstract: string, imageURL: string, videoURL: string, course: string) {
+  constructor(id: number, authors: string[], title: string, abstract: string, videoURL: string, course: string, imageURL?: string, pdfURL?: string) {
     this.id = id
     this.authors = [...authors]
     this.title = title;
     this.abstract = abstract;
     this.imageURL = imageURL;
+    this.pdfURL = pdfURL;
     this.videoURL = videoURL;
     if (course === 'csc491') {
       this.course = Course.CSC491
@@ -27,10 +29,10 @@ class Poster {
   }
 }
 
-type LoadPosterFromJSONFunc = (jsonPosters: { posterId: number, authors: string[], title: string, abstract: string, imageUrl: string, videoUrl: string, course: string }[]) => Poster[]
+type LoadPosterFromJSONFunc = (jsonPosters: { posterId: number, authors: string[], title: string, abstract: string, imageUrl?: string, pdfURL?: string, videoUrl: string, course: string }[]) => Poster[]
 
 export const loadPostersFromJSON: LoadPosterFromJSONFunc = (jsonPosters) => {
-  return jsonPosters.map(jsonPoster => new Poster(jsonPoster.posterId, jsonPoster.authors, jsonPoster.title, jsonPoster.abstract, jsonPoster.imageUrl, jsonPoster.videoUrl, jsonPoster.course));
+  return jsonPosters.map(jsonPoster => new Poster(jsonPoster.posterId, jsonPoster.authors, jsonPoster.title, jsonPoster.abstract, jsonPoster.videoUrl, jsonPoster.course, jsonPoster.imageUrl, jsonPoster.pdfURL));
 }
 
 export default Poster;
