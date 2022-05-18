@@ -20,10 +20,10 @@ const Poster = ({ poster, className }: PosterProps) => {
 					<PosterTitle title={poster.title} />
 					<div className='flex flex-col justify-start items-end pt-3'>
 						<p className='ml-3 leading-6 line-clamp-4 text-md text-right'>
-							{poster.abstract.split(' ')[0]}
+							Poster
 						</p>
 						<p className='ml-3 leading-6 line-clamp-4 text-bold text-2xl text-right'>
-							{poster.abstract.split(' ')[1]}
+							#{poster.id}
 						</p>
 					</div>
 				</div>
