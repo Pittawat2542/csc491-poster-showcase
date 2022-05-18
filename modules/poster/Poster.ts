@@ -29,10 +29,10 @@ class Poster {
   }
 }
 
-type LoadPosterFromJSONFunc = (jsonPosters: { posterId: number, authors: string[], title: string, abstract: string, imageUrl?: string, pdfURL?: string, videoUrl: string, course: string }[]) => Poster[]
+type LoadPosterFromJSONFunc = (jsonPosters: { posterId: number, authors: string[], title: string, abstract: string, imageUrl?: string, pdfUrl?: string, videoUrl: string, course: string }[]) => Poster[]
 
 export const loadPostersFromJSON: LoadPosterFromJSONFunc = (jsonPosters) => {
-  return jsonPosters.map(jsonPoster => new Poster(jsonPoster.posterId, jsonPoster.authors, jsonPoster.title, jsonPoster.abstract, jsonPoster.videoUrl, jsonPoster.course, jsonPoster.imageUrl, jsonPoster.pdfURL));
+  return jsonPosters.map(jsonPoster => new Poster(jsonPoster.posterId, jsonPoster.authors, jsonPoster.title, jsonPoster.abstract, jsonPoster.videoUrl, jsonPoster.course, jsonPoster.imageUrl, jsonPoster.pdfUrl));
 }
 
 export default Poster;

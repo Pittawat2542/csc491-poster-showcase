@@ -32,7 +32,7 @@ const Poster = ({ poster, className }: PosterProps) => {
 				</p>
 			</div>
 			<div className='flex justify-between gap-3'>
-				<a className='w-full' href={poster?.imageURL}>
+				<a className='w-full' href={poster?.imageURL ? poster.imageURL : poster.pdfURL}>
 					<button className='w-full border-2 border-green-600 text-green-600 p-2 px-5 rounded-md font-bold text-xl tracking-wider shadow-md hover:shadow-lg hover:text-white hover:bg-green-600 transition-shadow transition-colors'>
 						Poster
 					</button>
