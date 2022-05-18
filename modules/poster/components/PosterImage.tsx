@@ -7,7 +7,7 @@ type PosterImageProps = {
 };
 
 const PosterImage = ({ imageURL, pdfURL }: PosterImageProps) => {
-	if (imageURL !== null) {
+	if (!!imageURL) {
 		return imageURL?.includes('drive.google') ? (
 			<img
 				className='rounded-md w-full max-w-full h-auto object-cover object-center mx-auto'
@@ -21,7 +21,7 @@ const PosterImage = ({ imageURL, pdfURL }: PosterImageProps) => {
 			</p>
 			</div>
 		);
-	} else if (pdfURL !== null) {
+	} else if (!!pdfURL) {
 		return (
 			<div className='relative overflow-hidden w-full pt-[56.25%]'>
 				<Iframe
