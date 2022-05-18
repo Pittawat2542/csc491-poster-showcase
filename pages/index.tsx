@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 	return (
 		<div className='max-w-max m-auto'>
 			<Head>
-				<title>CSC494 Poster Competition</title>
+				<title>CSC491 Poster Competition</title>
 			</Head>
 
 			<header className='mt-10 mb-5 text-center'>
